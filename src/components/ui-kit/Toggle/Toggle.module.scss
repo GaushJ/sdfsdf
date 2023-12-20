@@ -1,0 +1,53 @@
+@import "../../../assets/styles/colors";
+
+.toggle {
+  width: 44px;
+  height: 22px;
+  border-radius: 16px;
+  background: $primary;
+  display: flex;
+  align-items: center;
+  padding: 2px;
+  position: relative;
+  transition: 0.3s all;
+
+  &.inActive {
+    background: #bfbfbf;
+  }
+
+  .light {
+    position: absolute;
+    left: 2px;
+    opacity: 1;
+    transition: 0.2s all;
+
+    &.lightOff {
+      opacity: 0;
+    }
+  }
+
+  .dark {
+    position: absolute;
+    left: 24px;
+    opacity: 1;
+    transition: 0.2s all;
+
+    &.darkOff {
+      opacity: 0;
+    }
+  }
+
+  .state {
+    position: absolute;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    background: white;
+    transition: 0.3s all;
+    left: 2px;
+
+    &.active {
+      left: 24px;
+    }
+  }
+}

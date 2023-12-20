@@ -1,0 +1,10 @@
+.input_with_measurement {
+  position: relative;
+
+  .measurement {
+    position: absolute;
+    top: 6px;
+    left: 40px;
+    z-index: 10;
+  }
+}

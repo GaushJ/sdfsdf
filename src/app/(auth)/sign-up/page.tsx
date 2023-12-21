@@ -31,6 +31,7 @@ const SignUp: React.FC = () => {
         const { data, error } = await supabase.auth.getSession()
         console.log(data)
     }
+    //@ts-ignore
     const handleEmailChange = (e) => {
         const enteredEmail = e.target.value;
         setEmail(enteredEmail);
@@ -105,6 +106,7 @@ const SignUp: React.FC = () => {
 
     const handleAppleSignup = async () => {
         try {
+             //@ts-ignore
             const { data, error } = supabase.auth.signInWithOAuth({
                 provider: 'apple',
                 options: {

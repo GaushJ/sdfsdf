@@ -17,6 +17,7 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
     const [isLargeSiderMenu, setIsLargeSiderMenu] = useState<boolean>(true)
 
     const pathname = usePathname();
+    // @ts-ignore
     const pathnames = pathname.split('/')
     const currentPage = pathnames[pathnames.length - 1]
 
@@ -32,14 +33,15 @@ const DefaultLayout: FC<PropsWithChildren> = ({ children }) => {
     const retrieveSession = async () => {
         const { data, error } = await supabase.auth.getSession()
         if (!localStorage.getItem('sb-omlwmiqkdcgpzvpqsxre-auth-token')) {
-            redirect('/sign-up')
+            window.location.replace("http://localhost:3000/sign-up")
+            // redirect('/sign-in')
         } else {
             const setCookies = await axios.post('/api/auth', {
                 session: data
             })
-            console.log(setCookies)
+            // console.log(setCookies)
         }
-        console.log(data)
+        // console.log(data)
     }
     const setDefaultMenuType = (value: boolean) => {
         localStorage.setItem('defaultMenuLarge', value.toString());
